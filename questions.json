@@ -9,5 +9,11 @@
     "type": "text",
     "question": "Solve $5 + 3$",
     "answer": "8"
-  }
+  },
+{
+  "type": "multiple",
+  "question": "What is the Quadratic Formula?",
+  "options": ["$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$","$4$","$5$"],
+  "answer": "$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$"
+}
 ]
