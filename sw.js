@@ -1,4 +1,5 @@
-const CACHE_NAME = 'formula-practice-v1';
+const CACHE_NAME = 'formula-practice-v2';
+
 const ASSETS = [
   '/',
   '/index.html',
