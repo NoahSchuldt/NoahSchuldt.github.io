@@ -19,7 +19,7 @@ function renderLatex(element) {
   });
 }
 
-// Load questions from JSON
+// Load questions
 async function loadQuestions() {
   try {
     const res = await fetch('questions.json');
@@ -110,11 +110,9 @@ nextBtn.onclick = () => {
 // Init
 loadQuestions();
 
-// Register Service Worker
+// Service Worker
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('sw.js')
-      .then(reg => console.log('SW registered', reg))
-      .catch(err => console.log('SW failed', err));
+    navigator.serviceWorker.register('sw.js');
   });
 }
