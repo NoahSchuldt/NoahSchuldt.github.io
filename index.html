@@ -1,5 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formula Practice</title>
   <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#4CAF50">
 </head>
-Servus
+<body>
+  <div id="app">
+    <h1>Formula Practice</h1>
+
+    <div id="question-container">
+      <p id="question"></p>
+      <div id="answers"></div>
+      <input type="text" id="text-answer" placeholder="Type your answer here" style="display:none;" />
+    </div>
+
+    <button id="submit">Submit</button>
+    <button id="next" style="display:none;">Next</button>
+
+    <p id="feedback"></p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
