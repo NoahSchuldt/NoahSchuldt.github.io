@@ -1,10 +1,11 @@
-const CACHE_NAME = 'formula-practice-v3';
+const CACHE_NAME = 'formula-practice-v4';
 
 const ASSETS = [
   '/',
   '/index.html',
   '/app.js',
-  '/questions.json'
+  '/questions.json',
+  '/style.css'
 ];
 
 self.addEventListener('install', event => {
