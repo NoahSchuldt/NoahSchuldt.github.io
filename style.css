@@ -1,3 +1,13 @@
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Optional: make buttons look nicer */
+button {
+  font-family: 'Open Sans', sans-serif;
+  cursor: pointer;
+}
+
+input {
+  font-family: 'Open Sans', sans-serif;
 }
