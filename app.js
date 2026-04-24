@@ -1,17 +1,4 @@
-const questions = [
-  {
-    type: "multiple",
-    question: "What is $2 + 2$?",
-    options: ["$3$", "$4$", "$5$"],
-    answer: "$4$"
-  },
-  {
-    type: "text",
-    question: "Solve $5 + 3$",
-    answer: "8"
-  }
-];
-
+let questions = [];
 let currentIndex = 0;
 let selectedAnswer = null;
 
@@ -30,6 +17,18 @@ function renderLatex(element) {
       { left: "$$", right: "$$", display: true }
     ]
   });
+}
+
+// Load questions from JSON
+async function loadQuestions() {
+  try {
+    const res = await fetch('questions.json');
+    questions = await res.json();
+    loadQuestion();
+  } catch (err) {
+    questionEl.textContent = "Failed to load questions.";
+    console.error(err);
+  }
 }
 
 function loadQuestion() {
@@ -108,7 +107,8 @@ nextBtn.onclick = () => {
   }
 };
 
-loadQuestion();
+// Init
+loadQuestions();
 
 // Register Service Worker
 if ('serviceWorker' in navigator) {
