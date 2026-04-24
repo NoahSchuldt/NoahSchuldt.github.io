@@ -1,6 +1,68 @@
 const questions = [
+  {
+    type: "multiple",
+    question: "What is $2 + 2$?",
+    options: ["$3$", "$4$", "$5$"],
+    answer: "$4$"
+  },
+  {
+    type: "text",
+    question: "Solve $5 + 3$",
+    answer: "8"
+  }
+];
+
+let currentIndex = 0;
+let selectedAnswer = null;
+
+const questionEl = document.getElementById("question");
+const answersEl = document.getElementById("answers");
+const textAnswerEl = document.getElementById("text-answer");
+const submitBtn = document.getElementById("submit");
+const nextBtn = document.getElementById("next");
+const feedbackEl = document.getElementById("feedback");
+
+// Render LaTeX
+function renderLatex(element) {
+  renderMathInElement(element, {
+    delimiters: [
+      { left: "$", right: "$", display: false },
+      { left: "$$", right: "$$", display: true }
+    ]
+  });
+}
+
+function loadQuestion() {
+  const q = questions[currentIndex];
+
+  questionEl.innerHTML = q.question;
+  answersEl.innerHTML = "";
+  feedbackEl.textContent = "";
+  selectedAnswer = null;
+
+  if (q.type === "multiple") {
+    textAnswerEl.style.display = "none";
+
+    q.options.forEach(option => {
+      const btn = document.createElement("button");
+      btn.innerHTML = option;
+
+      btn.onclick = () => {
+        selectedAnswer = option;
+        document.querySelectorAll("#answers button").forEach(b => b.classList.remove("selected"));
+        btn.classList.add("selected");
+      };
+
+      answersEl.appendChild(btn);
+      renderLatex(btn);
+    });
+
+  } else {
+    textAnswerEl.style.display = "block";
     textAnswerEl.value = "";
   }
+
+  renderLatex(questionEl);
 
   submitBtn.style.display = "inline";
   nextBtn.style.display = "none";
@@ -21,7 +83,7 @@ submitBtn.onclick = () => {
     return;
   }
 
-  if (userAnswer == q.answer) {
+  if (userAnswer == q.answer || userAnswer == q.answer.replace(/\$/g, "")) {
     feedbackEl.textContent = "Correct!";
   } else {
     feedbackEl.textContent = `Wrong! Correct answer: ${q.answer}`;
@@ -33,6 +95,7 @@ submitBtn.onclick = () => {
 
 nextBtn.onclick = () => {
   currentIndex++;
+
   if (currentIndex >= questions.length) {
     questionEl.textContent = "Finished!";
     answersEl.innerHTML = "";
