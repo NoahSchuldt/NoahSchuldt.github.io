@@ -2,8 +2,12 @@
   {
     "type": "multiple",
     "question": "Wie viel Joule sind 1 eV?",
-    "options": ["1{,}6022 \\cdot 10^{-19}", "1{,}022 \\cdot 10^{-19}", "1{,}6202 \\cdot 10^{-18}"],
-    "answer": "$1{,}6022 \cdot 10^{-19}$"
+    "options": [
+      "$1{,}6022 \\\\cdot 10^{-19}$",
+      "$1{,}022 \\\\cdot 10^{-19}$",
+      "$1{,}6202 \\\\cdot 10^{-18}$"
+    ],
+    "answer": "$1{,}6022 \\\\cdot 10^{-19}$"
   },
   {
     "type": "text",
@@ -11,9 +15,9 @@
     "answer": "8"
   },
   {
-    "type": "multipe",
+    "type": "multiple",
     "question": "Wie wird die Energie gemessen?",
-    "options": ["Joule","Watt","Lumen(bei Licht)"],
+    "options": ["Joule", "Watt", "Lumen (bei Licht)"],
     "answer": "Joule"
   }
 ]
