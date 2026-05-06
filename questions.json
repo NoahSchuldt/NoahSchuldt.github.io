@@ -1,19 +1,19 @@
 [
   {
     "type": "multiple",
-    "question": "What is $2 + 2$?",
-    "options": ["$3$", "$4$", "$5$"],
-    "answer": "$4$"
+    "question": "Wie viel Joule sind 1 eV?",
+    "options": ["1{,}6022 \\cdot 10^{-19}", "1{,}022 \\cdot 10^{-19}", "1{,}6202 \\cdot 10^{-18}"],
+    "answer": "$1{,}6022 \cdot 10^{-19}$"
   },
   {
     "type": "text",
     "question": "Solve $5 + 3$",
     "answer": "8"
   },
-{
-  "type": "multiple",
-  "question": "What is the Quadratic Formula?",
-  "options": ["$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$","$4$","$5$"],
-  "answer": "$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$"
-}
+  {
+    "type": "multipe",
+    "question": "Wie wird die Energie gemessen?",
+    "options": ["Joule","Watt","Lumen(bei Licht)"],
+    "answer": "Joule"
+  }
 ]
