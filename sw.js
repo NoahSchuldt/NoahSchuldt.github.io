@@ -1,4 +1,4 @@
-const CACHE_NAME = 'formula-practice-v5';
+const CACHE_NAME = 'formula-practice-v6';
 
 const ASSETS = [
   '/',
