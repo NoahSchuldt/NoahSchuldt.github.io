@@ -1,12 +1,13 @@
 body {
   font-family: 'Open Sans', sans-serif;
 }
-
 button {
   font-family: 'Open Sans', sans-serif;
   cursor: pointer;
 }
-
 input {
   font-family: 'Open Sans', sans-serif;
+}
+.selected {
+  border: 2px solid black;
 }
