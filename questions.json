@@ -1,23 +1,127 @@
 [
   {
     "type": "multiple",
-    "question": "Wie viel Joule sind 1 eV?",
+    "question": "Was ist die Formel für die Höhenenergie?",
     "options": [
-      "$1{,}6022 \\cdot 10^{-19}$",
-      "$1{,}022 \\cdot 10^{-19}$",
-      "$1{,}6202 \\cdot 10^{-18}$"
+      "$E_h = mgh$",
+      "$E_{kin} = \\\\frac{1}{2}mv^2$",
+      "$W = Fs$"
     ],
-    "answer": "$1{,}6022 \\cdot 10^{-19}$"
-  },
-  {
-    "type": "text",
-    "question": "Solve $5 + 3$",
-    "answer": "8"
+    "answer": "$E_h = mgh$"
   },
   {
     "type": "multiple",
-    "question": "Wie wird die Energie gemessen?",
-    "options": ["Joule", "Watt", "Lumen (bei Licht)"],
+    "question": "Was ist die Formel für die kinetische Energie?",
+    "options": [
+      "$E_{kin} = \\\\frac{1}{2}mv^2$",
+      "$E_h = mgh$",
+      "$P = UI$"
+    ],
+    "answer": "$E_{kin} = \\\\frac{1}{2}mv^2$"
+  },
+  {
+    "type": "multiple",
+    "question": "Was macht man mit einer Energiebilanz?",
+    "options": [
+      "Man vergleicht verschiedene Energieformen",
+      "Man misst die Temperatur",
+      "Man berechnet die Stromstärke"
+    ],
+    "answer": "Man vergleicht verschiedene Energieformen"
+  },
+  {
+    "type": "multiple",
+    "question": "Was besagt der Energieerhaltungssatz?",
+    "options": [
+      "Energie kann weder erzeugt noch zerstört werden",
+      "Energie verschwindet mit der Zeit",
+      "Energie entsteht aus dem Nichts"
+    ],
+    "answer": "Energie kann weder erzeugt noch zerstört werden"
+  },
+  {
+    "type": "multiple",
+    "question": "Was ist die Formel für die mechanische Energie?",
+    "options": [
+      "$E_{mech} = E_h + E_{kin}$",
+      "$E = mc^2$",
+      "$W = Pt$"
+    ],
+    "answer": "$E_{mech} = E_h + E_{kin}$"
+  },
+  {
+    "type": "multiple",
+    "question": "Kann Energie zerstört werden?",
+    "options": [
+      "Nein",
+      "Ja",
+      "Nur elektrische Energie"
+    ],
+    "answer": "Nein"
+  },
+  {
+    "type": "multiple",
+    "question": "Wie berechnet man die Anzahl an Elektronen?",
+    "options": [
+      "$n = \\\\frac{Q}{e}$",
+      "$P = UI$",
+      "$E = mc^2$"
+    ],
+    "answer": "$n = \\\\frac{Q}{e}$"
+  },
+  {
+    "type": "multiple",
+    "question": "Wie berechnet man die Anzahl an Elektronen? (Wörter)",
+    "options": [
+      "Gesamtladung / Ladung eines Elektrons",
+      "Spannung / Stromstärke",
+      "Masse / Volumen"
+    ],
+    "answer": "Gesamtladung / Ladung eines Elektrons"
+  },
+  {
+    "type": "multiple",
+    "question": "In welcher Einheit wird Energie angegeben?",
+    "options": [
+      "Joule",
+      "Watt",
+      "Volt"
+    ],
     "answer": "Joule"
+  },
+  {
+    "type": "text",
+    "question": "Welche viele Energieformeln kennen wir bereits?",
+    "answer": "3"
+  },
+  {
+    "type": "multiple",
+    "question": "Was ist ein Elektronenvolt?",
+    "options": [
+      "Eine Energieeinheit",
+      "Eine Spannungseinheit",
+      "Eine Kraft"
+    ],
+    "answer": "Eine Energieeinheit"
+  },
+  {
+    "type": "multiple",
+    "question": "Was ist die Formel für verrichtete Arbeit?",
+    "options": [
+      "$W = Fs$",
+      "$E_h = mgh$",
+      "$P = UI$"
+    ],
+    "answer": "$W = Fs$"
+  },
+  {
+    "type": "multiple",
+    "question": "Was bedeutet Delta in Bezug auf $\\\\Delta E$, $\\\\Delta t$ oder $\\\\Delta x$?",
+    "options": [
+      "Veränderung",
+      "Geschwindigkeit",
+      "Energieverlust"
+    ],
+    "answer": "Veränderung"
   }
 ]
