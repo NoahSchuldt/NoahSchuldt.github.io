@@ -9,7 +9,6 @@ const submitBtn = document.getElementById("submit");
 const nextBtn = document.getElementById("next");
 const feedbackEl = document.getElementById("feedback");
 
-// Render LaTeX
 function renderLatex(element) {
   renderMathInElement(element, {
     delimiters: [
@@ -19,56 +18,84 @@ function renderLatex(element) {
   });
 }
 
-// Load questions
 async function loadQuestions() {
+
   try {
-    const res = await fetch('questions.json');
+
+    const res = await fetch("./questions.json");
+
     questions = await res.json();
+
     loadQuestion();
+
   } catch (err) {
-    questionEl.textContent = "Failed to load questions.";
+
+    questionEl.innerHTML = `
+      Failed to load questions.
+      <br>
+      Try refreshing the page.
+    `;
+
     console.error(err);
   }
 }
 
 function loadQuestion() {
+
   const q = questions[currentIndex];
 
   questionEl.innerHTML = q.question;
+
   answersEl.innerHTML = "";
-  feedbackEl.textContent = "";
+
+  feedbackEl.innerHTML = "";
+
   selectedAnswer = null;
 
   if (q.type === "multiple") {
+
     textAnswerEl.style.display = "none";
 
     q.options.forEach(option => {
+
       const btn = document.createElement("button");
+
       btn.innerHTML = option;
 
       btn.onclick = () => {
+
         selectedAnswer = option;
-        document.querySelectorAll("#answers button").forEach(b => b.classList.remove("selected"));
+
+        document
+          .querySelectorAll("#answers button")
+          .forEach(b => b.classList.remove("selected"));
+
         btn.classList.add("selected");
       };
 
       answersEl.appendChild(btn);
+
       renderLatex(btn);
     });
 
   } else {
+
     textAnswerEl.style.display = "block";
+
     textAnswerEl.value = "";
   }
 
   renderLatex(questionEl);
 
   submitBtn.style.display = "inline";
+
   nextBtn.style.display = "none";
 }
 
 submitBtn.onclick = () => {
+
   const q = questions[currentIndex];
+
   let userAnswer;
 
   if (q.type === "multiple") {
@@ -78,41 +105,63 @@ submitBtn.onclick = () => {
   }
 
   if (!userAnswer) {
-    feedbackEl.textContent = "Please provide an answer.";
+
+    feedbackEl.textContent = "Bitte eine Antwort eingeben.";
+
     return;
   }
 
-  if (userAnswer == q.answer || userAnswer == q.answer.replace(/\$/g, "")) {
-    feedbackEl.textContent = "Correct!";
+  if (
+    userAnswer === q.answer ||
+    userAnswer === q.answer.replace(/\$/g, "")
+  ) {
+
+    feedbackEl.innerHTML = "Correct!";
+
   } else {
-    feedbackEl.textContent = `Wrong! Correct answer: ${q.answer}`;
+
+    feedbackEl.innerHTML =
+      `Wrong! Richtige Antwort: ${q.answer}`;
+
+    renderLatex(feedbackEl);
   }
 
   submitBtn.style.display = "none";
+
   nextBtn.style.display = "inline";
 };
 
 nextBtn.onclick = () => {
+
   currentIndex++;
 
   if (currentIndex >= questions.length) {
+
     questionEl.textContent = "Finished!";
+
     answersEl.innerHTML = "";
+
     textAnswerEl.style.display = "none";
+
     submitBtn.style.display = "none";
+
     nextBtn.style.display = "none";
-    feedbackEl.textContent = "";
+
+    feedbackEl.innerHTML = "";
+
   } else {
+
     loadQuestion();
   }
 };
 
-// Init
 loadQuestions();
 
-// Service Worker
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('sw.js');
+if ("serviceWorker" in navigator) {
+
+  window.addEventListener("load", () => {
+
+    navigator.serviceWorker.register("./sw.js");
+
   });
 }
