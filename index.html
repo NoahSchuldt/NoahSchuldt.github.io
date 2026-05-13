@@ -1,39 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formula Practice</title>
 
-  <link rel="manifest" href="manifest.json">
+  <!-- Manifest -->
+  <link rel="manifest" href="./manifest.json">
 
-  <!-- Open Sans font -->
+  <!-- Open Sans -->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- Your CSS -->
-  <link rel="stylesheet" href="style.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="./style.css">
 
-  <!-- KaTeX (LaTeX rendering) -->
+  <!-- KaTeX -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
 </head>
 <body>
+
   <div id="app">
+
     <h1>Formula Practice</h1>
 
     <div id="question-container">
+
       <p id="question"></p>
+
       <div id="answers"></div>
-      <input type="text" id="text-answer" placeholder="Type your answer here" style="display:none;" />
+
+      <input
+        type="text"
+        id="text-answer"
+        placeholder="Antwort eingeben..."
+        style="display:none;"
+      >
+
     </div>
 
     <button id="submit">Submit</button>
     <button id="next" style="display:none;">Next</button>
 
     <p id="feedback"></p>
+
   </div>
 
-  <script src="app.js"></script>
+  <script src="./app.js"></script>
+
 </body>
 </html>
